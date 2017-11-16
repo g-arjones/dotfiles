@@ -1,0 +1,17 @@
+// "Merge" this with the auto generated c_cpp_properties.json
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/home/arjones/dev/install/include"
+            ],
+            "browse": {
+                "path": [
+                    "/home/arjones/dev/install/include"
+                ],
+            },
+            "compileCommands": "${workspaceRoot}/build/compile_commands.json",
+        }
+    ]
+}

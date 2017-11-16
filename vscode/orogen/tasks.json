@@ -1,0 +1,26 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Debug",
+            "type": "shell",
+            "isBackground": true,
+            "command": "ruby ${workspaceRoot}/.vscode/task_Debug.rb",
+            "problemMatcher": [
+                {
+                    "pattern": {
+                        "regexp": "^"
+                    },
+                    "owner": "custom",
+                    "background": {
+                        "activeOnStart": true,
+                        "beginsPattern": "^Listening",
+                        "endsPattern": "(\\d+)$"
+                    }
+                }
+            ]
+        }
+    ]
+}

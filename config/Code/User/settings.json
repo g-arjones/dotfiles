@@ -1,0 +1,24 @@
+{
+    "ruby.lint": {
+        "rubocop": {
+            "except": [
+                "Layout/IndentationWidth"
+            ]
+        }
+    },
+    "editor.fontSize": 13,
+    "debug.openExplorerOnEnd": true,
+    "editor.scrollBeyondLastLine": false,
+    "editor.minimap.enabled": false,
+    "editor.rulers": [80],
+    "cmake.useCMakeServer": true,
+    "explorer.openEditors.visible": 0,
+    "window.menuBarVisibility": "toggle",
+    "workbench.colorTheme": "Default Light+",
+    "workbench.activityBar.visible": true,
+    "cmake-tools-helper.cmake_download_path": "/home/arjones/.vscode/extensions/maddouri.cmake-tools-helper-0.1.1/cmake_download",
+    "C_Cpp.intelliSenseEngineFallback": "Enabled",
+    "C_Cpp.intelliSenseEngine": "Default",
+    "C_Cpp.errorSquiggles": "Enabled",
+    "workbench.startupEditor": "welcomePage"
+}

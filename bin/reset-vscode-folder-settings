@@ -1,0 +1,51 @@
+#!/bin/bash
+
+set -e
+
+template_dir="${HOME}/dotfiles/vscode/"
+
+if [ $# -lt 1 ]; then
+    echo "use: $0 [-l|-c] template_name"
+    exit 1
+fi
+
+if [ "$1" = "-l" ]; then
+    echo -e "Available templates:\n"
+    find ${template_dir}/* -maxdepth 1 -type d | xargs basename
+    exit 0
+fi
+
+if [ "$1" = "-c" ]; then
+    read -p "Remove '.vscode' folder and its contents? [y/N] " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        rm -rf .vscode
+    fi
+    selected_template="$2"
+else
+    selected_template="$1"
+fi
+
+if [ -z "$selected_template" ]; then
+    exit 0
+else
+    selected_template_dir="${template_dir}/${selected_template}"
+    if [ ! -d "$selected_template_dir" ]; then
+        echo "error: ${selected_template}: template not found"
+    fi
+fi
+
+selected_template_env="${selected_template_dir}/env.sh"
+if [ -f "$selected_template_env" ]; then
+    source "$selected_template_env"
+fi
+
+mkdir -p .vscode
+
+find ${selected_template_dir}/ -maxdepth 1 -type f ! -name env.sh | while read file
+do
+    dest_file="`basename \"$file\"`"
+    dest_file=".vscode/${dest_file}"
+    cat "$file" | envsubst "$ENV_VARS" > "$dest_file"
+    echo "Reset $dest_file"
+done
