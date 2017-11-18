@@ -32,6 +32,7 @@ else
     selected_template_dir="${template_dir}/${selected_template}"
     if [ ! -d "$selected_template_dir" ]; then
         echo "error: ${selected_template}: template not found"
+        exit 1
     fi
 fi
 
