@@ -10,8 +10,12 @@ if [ $# -lt 1 ]; then
 fi
 
 if [ "$1" = "-l" ]; then
-    echo -e "Available templates:\n"
-    find ${template_dir}/* -maxdepth 1 -type d | xargs basename
+    echo "Available templates:"
+    find ${template_dir}/* -maxdepth 1 -type d | while read file
+    do
+        template_name="`basename \"$file\"`"
+        echo "  ${template_name}"
+    done
     exit 0
 fi
 
