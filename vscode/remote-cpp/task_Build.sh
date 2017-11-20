@@ -6,7 +6,7 @@ autoprojRoot="$AUTOPROJ_ROOT"
 
 shift
 
-ssh $USER@$HOST -p $PORT -Y '/bin/bash -s' <<EOF | sed -e "s=$REMOTE_WORKSPACE=${workspaceRoot}=g"
+ssh $USER@$HOST -p $PORT -Y '/bin/bash -s' <<EOF | sed -e "s=$REMOTE_WORKSPACE==g"
 
 if [ ! -z "$autoprojRoot" ]; then
     cd "$autoprojRoot"
