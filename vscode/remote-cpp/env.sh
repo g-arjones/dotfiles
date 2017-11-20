@@ -1,17 +1,18 @@
 #!/bin/bash
 
+base=$(basename $0)
 show_usage()
 {
-    echo "use: USER=user HOST=host [PORT=22] REMOTE_WORKSPACE=dir DEBUG_TARGET=src/main [BUILD_DIR=build] [AUTOPROJ_ROOT=path] $0 $*"
+    echo "use: USER=user HOST=host [PORT=22] REMOTE_WORKSPACE=dir DEBUG_TARGET=src/main [BUILD_DIR=build] [AUTOPROJ_ROOT=path] $base $*"
     echo
     echo "note: REMOTE_WORKSPACE and AUTOPROJ_ROOT must be fully qualified paths, all other paths are relative to the workspace"
     exit 1
 }
 
-[ -z "$USER" ] && show_usage
-[ -z "$HOST" ] && show_usage
-[ -z "$REMOTE_WORKSPACE" ] && show_usage
-[ -z "$DEBUG_TARGET" ] && show_usage
+[ -z "$USER" ] && show_usage $*
+[ -z "$HOST" ] && show_usage $*
+[ -z "$REMOTE_WORKSPACE" ] && show_usage $*
+[ -z "$DEBUG_TARGET" ] && show_usage $*
 
 export USER="${USER}"
 export HOST="${HOST}"

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -z "$COMPONENT_NAME" ]; then
-    echo "use: COMPONENT_NAME=name [TASK_NAME=name] [DEPLOYMENT_NAME=name] $0 $*"
+    echo "use: COMPONENT_NAME=name [TASK_NAME=name] [DEPLOYMENT_NAME=name] $(basename $0) $*"
     exit 1
 fi
 
