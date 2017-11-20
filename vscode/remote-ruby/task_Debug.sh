@@ -10,7 +10,7 @@ if [ ! -z "$autoprojRoot" ]; then
     source env.sh
 fi
 
-cd $REMOTE_WORKSPACE/$BUILD_DIR
+cd $REMOTE_WORKSPACE
 rdebug-ide --host $HOST --port 1234 -- $*
 exit 0
 EOF

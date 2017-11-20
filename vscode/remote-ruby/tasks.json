@@ -10,7 +10,7 @@
             "command": "/bin/bash",
             "args": [
                 "${workspaceRoot}/.vscode/task_Debug.sh",
-                "${file}"
+                "${relativeFile}"
             ]
         }
     ]
