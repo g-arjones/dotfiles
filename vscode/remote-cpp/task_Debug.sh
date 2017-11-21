@@ -13,6 +13,7 @@ if [ ! -z "$autoprojRoot" ]; then
 fi
 
 cd $REMOTE_WORKSPACE/$BUILD_DIR
-gdbserver $HOST:30001 $DEBUG_TARGET
+#gdbserver $HOST:30001 $DEBUG_TARGET
+lldb-server platform --server --listen *:30001
 exit 0
 EOF

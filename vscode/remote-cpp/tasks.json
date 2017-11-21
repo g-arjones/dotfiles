@@ -38,19 +38,6 @@
             "command": "/bin/bash",
             "args": [
                 "${workspaceRoot}/.vscode/task_Debug.sh"
-            ],
-            "problemMatcher": [
-                {
-                    "pattern": {
-                        "regexp": "^"
-                    },
-                    "owner": "custom",
-                    "background": {
-                        "activeOnStart": true,
-                        "beginsPattern": "^Listening",
-                        "endsPattern": "(\\d+)$"
-                    }
-                }
             ]
         }
     ]

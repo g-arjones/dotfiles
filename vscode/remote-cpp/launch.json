@@ -2,6 +2,18 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "(lldb) Launch",
+            "type": "lldb",
+            "request": "launch",
+            "preLaunchTask": "Debug",
+            "program": "${workspaceRoot}/$BUILD_DIR/$DEBUG_TARGET",
+            "initCommands": [
+                "platform select remote-linux",
+                "platform connect connect://$HOST:30001"
+            ],
+            "sourceMap": { "$REMOTE_WORKSPACE" : "${workspaceRoot}" }
+        },
+        {
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
