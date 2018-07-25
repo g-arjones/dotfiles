@@ -64,6 +64,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   z
+  fz
   docker
   docker-compose
   zsh-autosuggestions
@@ -134,3 +135,8 @@ then
         string:$PANTHEON_TERMINAL_ID \
         string:"You should not have seen this, please report the incident to Pantheon Terminal developers."
 fi
+
+
+zmodload zsh/complist
+bindkey -M menuselect ' ' accept-and-infer-next-history
+bindkey -M menuselect '^[' undo
