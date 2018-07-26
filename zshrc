@@ -65,6 +65,7 @@ plugins=(
   git
   z
   fz
+  forgit
   docker
   docker-compose
   zsh-autosuggestions
