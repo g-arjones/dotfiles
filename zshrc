@@ -136,7 +136,7 @@ then
         string:"You should not have seen this, please report the incident to Pantheon Terminal developers."
 fi
 
-
 zmodload zsh/complist
 bindkey -M menuselect ' ' accept-and-infer-next-history
 bindkey -M menuselect '^[' undo
+unsetopt auto_cd
