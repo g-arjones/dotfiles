@@ -140,4 +140,8 @@ fi
 zmodload zsh/complist
 bindkey -M menuselect ' ' accept-and-infer-next-history
 bindkey -M menuselect '^[' undo
+bindkey '^ ' autosuggest-accept
 unsetopt auto_cd
+
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
